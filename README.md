@@ -87,6 +87,7 @@ void viewStudents() {
     }
 }
 
+
 void viewActivities(const std::vector<Activity>& activities) {
     for (const auto& activity : activities) {
         std::cout << "Activity: " << activity.name << ", Capacity: " << activity.members.size() << "/" << activity.max_capacity << "\n";
