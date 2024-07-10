@@ -104,3 +104,44 @@ void saveToFile() {
         file << "\n";
     }
     file.close();
+ std::cout << "Data saved to students.csv\n";
+}
+
+int main() {
+    int choice;
+    do {
+        std::cout << "Menu:\n";
+        std::cout << "1. Add Student\n";
+        std::cout << "2. View Students\n";
+        std::cout << "3. View Clubs/Societies\n";
+        std::cout << "4. View Sports\n";
+        std::cout << "5. Save all Files\n";
+        std::cout << "6. Exit\n";
+        std::cin >> choice;
+
+        switch (choice) {
+            case 1:
+                addStudent();
+                break;
+            case 2:
+                viewStudents();
+                break;
+            case 3:
+                viewActivities(clubs);
+                break;
+            case 4:
+                viewActivities(sports);
+                break;
+            case 5:
+                saveToFile();
+                break;
+            case 6:
+                std::cout << "Exiting...\n";
+                break;
+            default:
+                std::cout << "Invalid choice. Try again.\n";
+        }
+    } while (choice != 6);
+
+    return 0;
+}
