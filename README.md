@@ -129,7 +129,7 @@ int main() {
             case 3:
                 viewActivities(clubs);
                 break;
-            case 4:
+ case 4:
                 viewActivities(sports);
                 break;
             case 5:
@@ -144,4 +144,5 @@ int main() {
     } while (choice != 6);
 
     return 0;
-}
+}      
+            
