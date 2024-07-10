@@ -86,7 +86,6 @@ void viewStudents() {
         std::cout << "\n";
     }
 }
-
 void viewActivities(const std::vector<Activity>& activities) {
     for (const auto& activity : activities) {
         std::cout << "Activity: " << activity.name << ", Capacity: " << activity.members.size() << "/" << activity.max_capacity << "\n";
@@ -104,7 +103,7 @@ void saveToFile() {
         file << "\n";
     }
     file.close();
- std::cout << "Data saved to students.csv\n";
+    std::cout << "Data saved to students.csv\n";
 }
 
 int main() {
