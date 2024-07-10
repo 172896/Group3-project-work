@@ -75,3 +75,14 @@ void addStudent() {
     students.push_back(student);
 }
     
+
+void viewStudents() {
+    for (const auto& student : students) {
+        std::cout << "Name: " << student.firstname << " " << student.surname << ", Gender: " << student.gender << ", Age: " << student.age << ", Group: " << student.group << "\n";
+        std::cout << "Activities: ";
+        for (const auto& activity : student.activities) {
+            std::cout << activity << " ";
+        }
+        std::cout << "\n";
+    }
+}
