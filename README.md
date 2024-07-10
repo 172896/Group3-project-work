@@ -86,3 +86,21 @@ void viewStudents() {
         std::cout << "\n";
     }
 }
+
+void viewActivities(const std::vector<Activity>& activities) {
+    for (const auto& activity : activities) {
+        std::cout << "Activity: " << activity.name << ", Capacity: " << activity.members.size() << "/" << activity.max_capacity << "\n";
+    }
+}
+
+void saveToFile() {
+    std::ofstream file("students.csv");
+    file << "Firstname,Surname,Gender,Age,Group,Activities\n";
+    for (const auto& student : students) {
+        file << student.firstname << "," << student.surname << "," << student.gender << "," << student.age << "," << student.group << ",";
+        for (const auto& activity : student.activities) {
+            file << activity << " ";
+        }
+        file << "\n";
+    }
+    file.close();
