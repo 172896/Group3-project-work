@@ -93,7 +93,7 @@ void viewActivities(const std::vector<Activity>& activities) { //add a function 
     }
 }
 
-void saveToFile() {
+void saveToFile() {//add a function called saveToFile
     std::ofstream file("students.csv");
     file << "Firstname,Surname,Gender,Age,Group,Activities\n";
     for (const auto& student : students) {
