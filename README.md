@@ -76,7 +76,7 @@ void addStudent() {
 }
     
 
-void viewStudents() {
+void viewStudents() { //Add a function called veiw students .
     for (const auto& student : students) {
         std::cout << "Name: " << student.firstname << " " << student.surname << ", Gender: " << student.gender << ", Age: " << student.age << ", Group: " << student.group << "\n";
         std::cout << "Activities: ";
