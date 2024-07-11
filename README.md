@@ -87,7 +87,7 @@ void viewStudents() { //Add a function called veiw students .
     }
 }
 
-void viewActivities(const std::vector<Activity>& activities) {
+void viewActivities(const std::vector<Activity>& activities) { //add a function called activities
     for (const auto& activity : activities) {
         std::cout << "Activity: " << activity.name << ", Capacity: " << activity.members.size() << "/" << activity.max_capacity << "\n";
     }
