@@ -94,7 +94,7 @@ void viewActivities(const std::vector<Activity>& activities) { //add a function 
 }
 
 void saveToFile() {//add a function called saveToFile
-    std::ofstream file("students.csv");
+        std::ofstream file("students.csv", std::ios::app);
     file << "Firstname,Surname,Gender,Age,Group,Activities\n";
     for (const auto& student : students) {
         file << student.firstname << "," << student.surname << "," << student.gender << "," << student.age << "," << student.group << ",";
