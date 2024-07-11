@@ -3,7 +3,7 @@
 #include <string>
 #include <fstream>
 
-struct Student {
+struct Student { //Group related information about the student
     std::string firstname;
     std::string surname;
     std::string gender;
