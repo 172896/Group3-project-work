@@ -3,6 +3,7 @@
 #include <string>
 #include <fstream>
 using namespace std;
+
 struct Student { //Group related information about the student
     string firstname;
     string surname;
@@ -21,6 +22,7 @@ struct Activity {
 vector<Student> students;
 vector<Activity> sports = {{"Rugby", 20}, {"Athletics", 20}, {"Swimming", 20}, {"Soccer", 20}};
 vector<Activity> clubs = {{"Journalism Club", 60}, {"Red Cross Society", 60}, {"AISEC", 60}, {"Business Club", 60}, {"Computer Science Club", 60}};
+
 void addStudent() {
     Student student;
     cout << "Enter first name: ";
@@ -29,11 +31,14 @@ void addStudent() {
     cin >> student.surname;
     cout << "Enter gender (Male/Female): ";
     cin >> student.gender;
+    if(student.gender!="male" && "female") {
+        cout<<"Invalid input\n ";
+    }
     cout << "Enter age: ";
     cin >> student.age;
     cout << "Enter group (1-3): ";
     cin >> student.group;
-
+    
     int choice;
     do {
         cout << "Choose activity type: 1. Sport 2. Club/Society 3. Done: ";
@@ -87,7 +92,7 @@ void viewStudents() { //Add a function called veiw students .
     }
 }
 
-void viewActivities(const std::vector<Activity>& activities) { //add a function called activities
+void viewActivities(const vector<Activity>& activities) { //add a function called activities
     for (const auto& activity : activities) {
         cout << "Activity: " << activity.name << ", Capacity: " << activity.members.size() << "/" << activity.max_capacity << "\n";
     }
@@ -117,7 +122,7 @@ void saveToFile() {//add a function called saveToFile
         file << "\n";
     }
     file.close();
-    std::cout << "Data saved to students.csv\n";
+    cout << "Data saved to students.csv\n";
 }
 
 int main() {
@@ -157,7 +162,7 @@ int main() {
                 std::cout << "Exiting...\n";
             break;
             default:
-                std::cout << "Invalid choice. Try again.\n";
+                cout << "Invalid choice. Try again.\n";
         }
     } while (choice != 6);
 
