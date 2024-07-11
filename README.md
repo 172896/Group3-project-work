@@ -92,7 +92,20 @@ void viewActivities(const std::vector<Activity>& activities) { //add a function 
         std::cout << "Activity: " << activity.name << ", Capacity: " << activity.members.size() << "/" << activity.max_capacity << "\n";
     }
 }
-
+void viewGroupedStudents() {
+    for (int i = 1; i <= 3; i++) {
+        std::cout<< "Group "<< i <<":" << "endl";
+        for (auto& s : students) {
+            if (s.group == i) {
+                std::cout << s.firstname << " " << s.surname;
+                for (auto& activity : s.activities) {
+                    std::cout<< "\t" << activity;
+                }
+                std::cout<<"endl";
+            }
+        }
+    }
+}
 void saveToFile() {//add a function called saveToFile
         std::ofstream file("students.csv", std::ios::app);
     file << "Firstname,Surname,Gender,Age,Group,Activities\n";
@@ -115,8 +128,9 @@ int main() {
         std::cout << "2. View Students\n";
         std::cout << "3. View Clubs/Societies\n";
         std::cout << "4. View Sports\n";
-        std::cout << "5. Save all Files\n";
-        std::cout << "6. Exit\n";
+        std::cout << "5. View grouped students\n";
+        std::cout << "6. Save all Files\n ";
+        std::cout << "7. Exit\n";
         std::cin >> choice;
 
         switch (choice) {
@@ -133,12 +147,15 @@ int main() {
             case 4:
                 viewActivities(sports);
                 break;
-            case 5:
-                saveToFile();
-                break;
+           case 5:
+                viewGroupedStudents();
+            break;
             case 6:
+                saveToFile();
+            break;
+            case 7:
                 std::cout << "Exiting...\n";
-                break;
+            break;
             default:
                 std::cout << "Invalid choice. Try again.\n";
         }
